@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const featureCards = [
   {
     image: "/pic1.png",
@@ -42,7 +44,7 @@ function FeatureCard({
   return (
     <div className="relative rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
       {/* Image */}
-      <div className="w-full h-56 sm:h-64 overflow-hidden">
+      <div className="w-full  overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -181,7 +183,6 @@ const page = () => {
               {/* Key points */}
               <div className="mt-8 space-y-3">
                 {[
-                  "NITDA & Canadian accredited certifications",
                   "100% hands-on project-based learning",
                   "Career support & job placement assistance",
                 ].map((point) => (
@@ -226,12 +227,16 @@ const page = () => {
 
           {/* See More */}
           <div className="text-center mt-12">
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-[#F5A623] font-bold text-sm sm:text-base tracking-widest uppercase border-b-2 border-[#F5A623] pb-0.5 hover:text-[#C87D0E] hover:border-[#C87D0E] transition-colors duration-200"
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
+              style={{ background: "linear-gradient(135deg, #9B59B6 0%, #F5A623 100%)" }}
             >
-              SEE MORE
-            </a>
+              Learn More About Us
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

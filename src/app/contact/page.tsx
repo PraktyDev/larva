@@ -108,7 +108,7 @@ const page = () => {
 
       {/* ── Decorative Elements ── */}
       {/* Top purple triangle */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-[38%] pointer-events-none z-0">
+      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-[38%] pointer-events-none z-0">
         <svg
           width="90"
           height="90"
@@ -125,7 +125,7 @@ const page = () => {
           </defs>
           <polygon points="45,5 85,80 5,80" fill="url(#triGrad)" />
         </svg>
-      </div>
+      </div> */}
 
       {/* Bottom-left peach blob */}
       <div className="absolute bottom-24 left-8 sm:left-16 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-[#f9c89b] opacity-40 blur-sm pointer-events-none z-0" />
@@ -140,7 +140,7 @@ const page = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 pt-16 pb-24 sm:pt-20 sm:pb-32">
 
         {/* Page Title */}
-        <div className="text-center mb-14 sm:mb-20">
+        <div className="text-center mb-20">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-[#1a1a1a] tracking-tight">
             Contact{" "}
             <span className="text-[#F5A623]">Us</span>
@@ -175,7 +175,7 @@ const page = () => {
         </div>
 
         {/* ── Map / CTA Strip ── */}
-        <div className="mt-20 sm:mt-28 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        {/* <div className="mt-20 sm:mt-28 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
           <iframe
             title="Larva Coding Academy Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.3293040695657!2d3.8969!3d7.4113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d0a983bd2a3%3A0x5b2e4e3d6f7d4d3a!2sNew%20Bodija%2C%20Ibadan%2C%20Oyo%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1680000000000!5m2!1sen!2sng"
@@ -187,10 +187,10 @@ const page = () => {
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full"
           />
-        </div>
+        </div> */}
 
         {/* ── Contact Form ── */}
-        <div className="mt-16 sm:mt-20">
+        <div className="mt-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1a1a1a] text-center mb-10">
             Send Us a{" "}
             <span className="text-[#F5A623]">Message</span>

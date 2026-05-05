@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const companyLinks = [
   { label: "About Larva Coding Academy", href: "#" },
   { label: "News", href: "#" },
@@ -82,23 +84,13 @@ export default function Footer() {
           {/* Column 1 — Logo + Info */}
           <div className="flex flex-col gap-6">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 w-fit">
-              <div className="w-12 h-12 bg-[#1e1e1e] rounded-xl flex items-center justify-center shadow-md shrink-0">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="14,2 24,8 14,14 4,8" fill="#F5A623" />
-                  <polygon points="4,8 14,14 14,26 4,20" fill="#8A8A8A" />
-                  <polygon points="24,8 14,14 14,26 24,20" fill="#C87D0E" />
-                </svg>
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-white font-bold text-2xl tracking-tight">Larva</span>
-                <div className="bg-[#F5A623] px-1 py-px rounded-sm">
-                  <span className="text-white text-[9px] font-semibold tracking-widest uppercase">
-                    Coding Academy
-                  </span>
-                </div>
-              </div>
-            </a>
+            <Link href="/" className="shrink-0 w-fit block">
+              <img
+                src="/larvalogo.svg"
+                alt="Larva Coding Academy"
+                className="h-10 w-auto"
+              />
+            </Link>
 
             {/* Join us at */}
             <div>

@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 const features = [
-  {
-    title: "Experienced Trainers and Accreditation",
-    description:
-      "Our full-time trainers bring over 10 years of experience in website design and software programming. They are world-renowned developers dedicated to passing on their knowledge. Larva Coding Academy is also accredited by the National Information Technology Development Agency (NITDA) and the Skills Development Council of Canada, ensuring globally recognised programs in your achievement.",
-  },
+  // {
+  //   title: "Experienced Trainers and Accreditation",
+  //   description:
+  //     "Our full-time trainers bring over 10 years of experience in website design and software programming. They are world-renowned developers dedicated to passing on their knowledge. Larva Coding Academy is also accredited by the National Information Technology Development Agency (NITDA) and the Skills Development Council of Canada, ensuring globally recognised programs in your achievement.",
+  // },
   {
     title: "Industry-Focused Curriculum and Hands-On Learning",
     description:
@@ -29,7 +31,7 @@ const page = () => {
             <div className="w-full lg:w-[45%] shrink-0">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/about-team.png"
+                  src="/about3.svg"
                   alt="Larva Coding Academy Team"
                   className="w-full h-full object-cover"
                 />
@@ -51,9 +53,9 @@ const page = () => {
                   Us
                 </span>
                 {/* Triangle decoration */}
-                <svg width="22" height="22" viewBox="0 0 22 22" className="ml-1">
+                {/* <svg width="22" height="22" viewBox="0 0 22 22" className="ml-1">
                   <polygon points="11,2 20,19 2,19" fill="#9B59B6" opacity="0.85" />
-                </svg>
+                </svg> */}
               </div>
 
               {/* Headline */}
@@ -73,7 +75,7 @@ const page = () => {
                       {feature.description}
                     </p>
                     {i < features.length - 1 && (
-                      <div className="mt-5 border-b border-gray-100" />
+                      <div className="mt-0 border-b border-gray-100" />
                     )}
                   </div>
                 ))}
@@ -91,7 +93,7 @@ const page = () => {
         <div className="absolute bottom-10 right-10 w-52 h-52 rounded-full bg-[#9B59B6] opacity-10 blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-[#F5A623] opacity-10 blur-2xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
 
             {/* Left — Text */}
@@ -115,8 +117,8 @@ const page = () => {
                 We Can Do It Together.
               </p>
 
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center px-7 py-3 rounded-lg font-semibold text-sm text-white shadow-lg transition-all duration-200 hover:opacity-90 hover:shadow-xl active:scale-95"
                 style={{
                   background:
@@ -124,7 +126,7 @@ const page = () => {
                 }}
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
 
             {/* Right — Illustration */}
@@ -139,13 +141,12 @@ const page = () => {
                   }}
                 />
                 <img
-                  src="/images/instructor-illustration.png"
+                  src="/about2.svg"
                   alt="Become an Instructor"
                   className="relative w-full h-auto object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>

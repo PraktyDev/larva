@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Contact us", href: "/contact" },
 ];
 
-const Navbar = () =>{
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
@@ -51,51 +51,17 @@ const Navbar = () =>{
   }, []);
 
   return (
-    <nav className="w-full bg-[#f0f0f0] shadow-sm">
+    <nav className="w-full bg-[#f39821] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 shrink-0">
-            {/* Logo Icon */}
-            <div className="w-12 h-12 bg-[#1e1e1e] rounded-xl flex items-center justify-center shadow-md">
-              {/* Hexagon/box icon with orange and grey */}
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Top orange face */}
-                <polygon
-                  points="14,2 24,8 14,14 4,8"
-                  fill="#F5A623"
-                />
-                {/* Left grey face */}
-                <polygon
-                  points="4,8 14,14 14,26 4,20"
-                  fill="#8A8A8A"
-                />
-                {/* Right darker orange face */}
-                <polygon
-                  points="24,8 14,14 14,26 24,20"
-                  fill="#C87D0E"
-                />
-              </svg>
-            </div>
-
-            {/* Logo Text */}
-            <div className="flex flex-col leading-tight">
-              <span className="text-[#1e1e1e] font-bold text-2xl tracking-tight">
-                Larva
-              </span>
-              <div className="bg-[#F5A623] px-1 py-px rounded-sm">
-                <span className="text-white text-[9px] font-semibold tracking-widest uppercase">
-                  Coding Academy
-                </span>
-              </div>
-            </div>
-          </a>
+          <Link href="/" className="shrink-0">
+            <img
+              src="/larvalogo.svg"
+              alt="Larva Coding Academy"
+              className="h-10 w-auto"
+            />
+          </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -104,14 +70,13 @@ const Navbar = () =>{
                 <div key={link.label} className="relative" ref={dropdownRef}>
                   <button
                     onClick={() => setDropdownOpen((prev) => !prev)}
-                    className="flex items-center gap-1 text-[#444] hover:text-[#1e1e1e] font-medium text-sm transition-colors duration-200 cursor-pointer"
+                    className="flex items-center gap-1 text-white hover:text-white/90 font-medium text-sm transition-colors duration-200 cursor-pointer"
                   >
                     {link.label}
                     {/* Chevron */}
                     <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        dropdownOpen ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={2}
@@ -146,7 +111,7 @@ const Navbar = () =>{
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-[#444] hover:text-[#1e1e1e] font-medium text-sm transition-colors duration-200"
+                  className="text-white hover:text-white/90 font-medium text-sm transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -159,7 +124,8 @@ const Navbar = () =>{
             {/* Join Now Button (always visible) */}
             <Link
               href="#"
-              className="bg-[#f39821] hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold text-sm text-white shadow-md transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95"
+              className="border border-white hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold text-sm text-white shadow-md transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95"
+              style={{ background: "linear-gradient(45deg, #9B59B6 0%, #F5A623 100%)" }}
             >
               Join now
             </Link>
@@ -171,19 +137,16 @@ const Navbar = () =>{
               aria-label="Toggle menu"
             >
               <span
-                className={`block w-5 h-0.5 bg-[#333] rounded transition-all duration-300 ${
-                  mobileOpen ? "rotate-45 translate-y-1.5" : ""
-                }`}
+                className={`block w-5 h-0.5 bg-[#333] rounded transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#333] rounded mt-1 transition-all duration-300 ${
-                  mobileOpen ? "opacity-0" : ""
-                }`}
+                className={`block w-5 h-0.5 bg-[#333] rounded mt-1 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
+                  }`}
               />
               <span
-                className={`block w-5 h-0.5 bg-[#333] rounded mt-1 transition-all duration-300 ${
-                  mobileOpen ? "-rotate-45 -translate-y-2.5" : ""
-                }`}
+                className={`block w-5 h-0.5 bg-[#333] rounded mt-1 transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2.5" : ""
+                  }`}
               />
             </button>
           </div>
@@ -192,9 +155,8 @@ const Navbar = () =>{
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="bg-white border-t border-gray-200 px-4 pt-4 pb-6 space-y-1 shadow-lg">
           {navLinks.map((link) =>
@@ -206,9 +168,8 @@ const Navbar = () =>{
                 >
                   {link.label}
                   <svg
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      mobileDropdownOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -243,7 +204,7 @@ const Navbar = () =>{
               <Link
                 key={link.label}
                 href={link.href}
-                className="block px-4 py-3 rounded-xl text-[#444] hover:bg-gray-50 font-medium text-sm transition-colors duration-150"
+                className="block px-4 py-3 rounded-xl text-[#444] font-medium text-sm transition-colors duration-150"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

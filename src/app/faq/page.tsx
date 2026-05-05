@@ -93,16 +93,14 @@ function FAQItem({
     >
       <div className="flex items-center justify-between px-4 py-3.5 gap-3">
         <span
-          className={`text-sm font-medium transition-colors duration-200 ${
-            isOpen ? "text-[#9B59B6]" : "text-[#222]"
-          }`}
+          className={`text-sm font-medium transition-colors duration-200 ${isOpen ? "text-[#9B59B6]" : "text-[#222]"
+            }`}
         >
           {question}
         </span>
         <span
-          className={`transition-colors duration-200 ${
-            isOpen ? "text-[#9B59B6]" : "text-[#999]"
-          }`}
+          className={`transition-colors duration-200 ${isOpen ? "text-[#9B59B6]" : "text-[#999]"
+            }`}
         >
           {isOpen ? <ChevronDown /> : <ChevronRight />}
         </span>
@@ -110,9 +108,8 @@ function FAQItem({
 
       {/* Answer */}
       <div
-        className={`transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-4 pb-4 pt-1 border-t border-purple-100">
           <p className="text-[#666] text-xs sm:text-sm leading-relaxed">
@@ -188,9 +185,9 @@ const page = () => {
                   style={{ background: "radial-gradient(circle, #9B59B6 0%, #c8a0e8 100%)" }}
                 />
                 <img
-                  src="/images/faq-illustration.png"
+                  src="/faq1.svg"
                   alt="FAQ Illustration"
-                  className="relative w-full h-auto object-contain drop-shadow-xl"
+                  className="relative w-full object-contain drop-shadow-xl"
                 />
               </div>
             </div>
