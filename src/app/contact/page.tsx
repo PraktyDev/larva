@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function EnvelopeIcon() {
   return (
     <svg
@@ -54,15 +56,19 @@ const cards = [
     icon: <EnvelopeIcon />,
     title: "Contact Us",
     content: (
-      <div className="space-y-2">
-        <p className="text-[#555] text-sm">
-          <span className="font-medium text-[#333]">Call/WhatsApp: </span>
+      <div className="space-y-2 flex flex-col">
+        <Link href="tel:+2349051892704" className="text-[#555] text-sm">
+          <strong className="font-bold text-[#333]">Call: </strong>
           09158476665
-        </p>
-        <p className="text-[#555] text-sm">
-          <span className="font-medium text-[#333]">Email: </span>
-          Larvanigeria@gmail.com
-        </p>
+        </Link>
+        <Link href="https://wa.me/2349051892704" target="_blank" className="text-[#555] text-sm">
+          <strong className="font-bold text-[#333]">WhatsApp: </strong>
+          09158476665
+        </Link>
+        <Link href="mailto:larvanigeria@gmail.com" className="text-[#555] text-sm">
+          <strong className="font-bold text-[#333]">Email: </strong>
+          larvanigeria@gmail.com
+        </Link>
       </div>
     ),
   },
@@ -72,11 +78,11 @@ const cards = [
     content: (
       <div className="space-y-2">
         <p className="text-[#555] text-sm">
-          <span className="font-medium text-[#333]">Mon - Sat: </span>
+          <strong className="font-bold text-[#333]">Mon - Sat: </strong>
           8am - 4pm
         </p>
         <p className="text-[#555] text-sm">
-          <span className="font-medium text-[#333]">Sunday: </span>
+          <strong className="font-bold text-[#333]">Sunday: </strong>
           2pm - 4pm
         </p>
       </div>
@@ -88,13 +94,10 @@ const cards = [
     content: (
       <div className="space-y-4">
         <p className="text-[#555] text-sm leading-relaxed">
-          Ibadan Address: NO 5, Akinsehinwa Street, Beside Adis Hotel, Off
-          Favos bus stop, New Bodija, Ibadan.
+          <strong className="font-bold text-[#333]">Dugbe Address:</strong> 8th floor, Cocoa House, Dugbe,   Ibadan.
         </p>
         <p className="text-[#555] text-sm leading-relaxed">
-          Abuja Address - Inside Rosa Mystica School, Plot 216 Ave Maria
-          Cottage, Waterboard Road, Off Liberty Junction, Byazhin, Kubwa,
-          Abuja
+          <strong className="font-bold text-[#333]">Bodija Address:</strong> NO 5, Akinsehinwa Street,Beside Adis Hotel, Off Favos bus stop, New Bodija, Ibadan.
         </p>
       </div>
     ),

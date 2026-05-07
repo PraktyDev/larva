@@ -1,18 +1,21 @@
 'use client'
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import RegistrationForm from "./RegistrationForm";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About us", href: "/about" },
   {
     label: "Courses",
-    href: "#",
+    href: "/courses",
     dropdown: [
-      { label: "Web Development", href: "#" },
-      { label: "Mobile Development", href: "#" },
-      { label: "Data Science", href: "#" },
-      { label: "UI/UX Design", href: "#" },
+      { label: "Cybersecurity", href: "/courses" },
+      { label: "Data Analysis", href: "/courses" },
+      { label: "Frontend Development", href: "/courses" },
+      { label: "Backend Development", href: "/courses" },
+      { label: "Fullstack Development", href: "/courses" },
+      { label: "UI/UX Design", href: "/courses" },
     ],
   },
   { label: "FAQ", href: "/faq" },
@@ -23,6 +26,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [isRegFormOpen, setIsRegFormOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -122,13 +126,13 @@ const Navbar = () => {
           {/* Join Now Button + Mobile Hamburger */}
           <div className="flex items-center gap-4">
             {/* Join Now Button (always visible) */}
-            <Link
-              href="#"
+            <button
+              onClick={() => setIsRegFormOpen(true)}
               className="border border-white hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold text-sm text-white shadow-md transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95"
               style={{ background: "linear-gradient(45deg, #9B59B6 0%, #F5A623 100%)" }}
             >
               Join now
-            </Link>
+            </button>
 
             {/* Mobile Hamburger Button */}
             <button
@@ -214,16 +218,23 @@ const Navbar = () => {
 
           {/* Mobile Join Now Button */}
           <div className="pt-4">
-            <Link
-              href="#"
+            <button
               className="bg-[#f39821] flex items-center justify-center w-full px-6 py-3 rounded-xl font-semibold text-sm text-white shadow-md transition-all duration-200 hover:opacity-90 active:scale-95"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                setIsRegFormOpen(true);
+              }}
             >
               Join now
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+      
+      <RegistrationForm 
+        isOpen={isRegFormOpen} 
+        onClose={() => setIsRegFormOpen(false)} 
+      />
     </nav>
   );
 }

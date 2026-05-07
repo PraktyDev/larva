@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import RegistrationForm from "@/components/RegistrationForm";
 
 const faqs = [
   {
@@ -123,6 +124,7 @@ function FAQItem({
 
 const page = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isRegFormOpen, setIsRegFormOpen] = useState(false);
 
   const toggle = (i: number) => {
     setOpenIndex((prev) => (prev === i ? null : i));
@@ -224,15 +226,19 @@ const page = () => {
             Join us at Larva Tech Academy to be one of tech expert. Make your
             tech dreams come true. A trial will convince you.
           </p>
-          <a
-            href="#"
+          <button
+            onClick={() => setIsRegFormOpen(true)}
             className="relative z-10 inline-flex items-center justify-center px-8 py-2.5 bg-white text-[#7B3FA8] font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
           >
             Apply now
-          </a>
+          </button>
         </div>
       </section>
 
+      <RegistrationForm 
+        isOpen={isRegFormOpen} 
+        onClose={() => setIsRegFormOpen(false)} 
+      />
     </main>
   );
 }

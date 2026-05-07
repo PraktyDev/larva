@@ -33,7 +33,7 @@ const page = () => {
                 <img
                   src="/about3.svg"
                   alt="Larva Coding Academy Team"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
                 {/* Decorative blobs */}
                 <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-[#F5A623] opacity-20 blur-2xl pointer-events-none" />

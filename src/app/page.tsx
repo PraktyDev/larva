@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import RegistrationForm from "@/components/RegistrationForm";
 
 const featureCards = [
   {
@@ -69,7 +73,9 @@ function FeatureCard({
   );
 }
 
-const page = () => {
+const Page = () => {
+  const [showRegistration, setShowRegistration] = useState(false);
+
   return (
     <main className="w-full bg-white overflow-hidden">
 
@@ -107,26 +113,26 @@ const page = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-white text-base shadow-lg hover:opacity-90 hover:shadow-xl active:scale-95 transition-all duration-200"
+            <button
+              onClick={() => setShowRegistration(true)}
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-white text-base shadow-lg hover:opacity-90 hover:shadow-xl active:scale-95 transition-all duration-200 cursor-pointer"
               style={{ background: "linear-gradient(135deg, #9B59B6 0%, #F5A623 100%)" }}
             >
               Get Started Today
-            </a>
-            <a
-              href="#"
+            </button>
+            <Link
+              href="/courses"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-[#7B3FA8] text-base border-2 border-purple-300 hover:border-[#9B59B6] hover:bg-purple-50 transition-all duration-200 bg-white"
             >
               Explore Courses
-            </a>
+            </Link>
           </div>
 
           {/* Stats row */}
           <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {[
               { value: "100+", label: "Graduates" },
-              { value: "10+", label: "Courses" },
+              { value: "5+", label: "Courses" },
               { value: "5+", label: "Years Experience" },
               { value: "98%", label: "Satisfaction Rate" },
             ].map((stat) => (
@@ -260,24 +266,29 @@ const page = () => {
             experts. A trial will convince you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
+            <button
+              onClick={() => setShowRegistration(true)}
               className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-[#7B3FA8] rounded-xl font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200"
             >
               Apply Now
-            </a>
-            <a
-              href="#"
+            </button>
+            <Link
+              href="/about"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent text-white border-2 border-white/40 rounded-xl font-semibold text-sm hover:bg-white/10 transition-all duration-200"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Registration Form Modal */}
+      <RegistrationForm
+        isOpen={showRegistration}
+        onClose={() => setShowRegistration(false)}
+      />
     </main>
   );
 }
 
-export default page
+export default Page
