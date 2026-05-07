@@ -217,12 +217,12 @@ const page = () => {
           <p className="text-purple-200 text-sm max-w-lg mx-auto mb-8 leading-relaxed relative z-10">
             Our career advisors are here to help you find the perfect program that aligns with your goals and interests.
           </p>
-          <button
-            onClick={() => setIsRegFormOpen(true)}
+          <Link
+            href="/contact"
             className="relative z-10 inline-flex items-center justify-center px-8 py-3 bg-white text-[#7B3FA8] font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
           >
             Talk to an Advisor
-          </button>
+          </Link>
         </div>
       </section>
       <RegistrationForm 
